@@ -127,7 +127,7 @@ public abstract class Inmueble {
 	
 	public void CambioDePrecio(Double porcentajeAumento) {
 		
-		super.setMontoAnterior(super.getPrecioUSD());
+		MontoAnterior(PrecioUSD());
 		
 		montoNuevo = ((precioUSD * porcentajeAumento)/100) + precioUSD; 
 		
