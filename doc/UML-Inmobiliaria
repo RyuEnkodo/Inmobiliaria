@@ -1,0 +1,94 @@
+@startuml
+
+
+Title Diseño con mejor implementación de la solución
+
+abstract class Interesado{
+	nombre
+	mail
+
+	{abstract} getNombre()
+	{abstract} getMail()
+	notificarCambio(String mensaje) {...}
+	{abstract} responder(String mensaje)
+}
+note right of Interesado::notificarCambio
+notificarCambio ejecuta el metodo responder(mensaje)
+end note
+
+class Cliente {
+	apellido
+	telefono
+
+	getNombre() {...}
+	getMail() {...}
+	responder(String mensaje) {...}
+}
+note right of Cliente::responder
+emite respuesta cliente
+"He recibido un SMS en mi teléfono <nro_telefono> con el mensaje: mensaje"
+end note
+
+class Inmobiliaria {
+	procentajeComision
+	List<Inmueble> inmueblesOfrecidos
+
+	getNombre() {...}
+	getMail() {...}
+	responder(String mensaje) {...}
+}
+note left of Inmobiliaria::responder
+emite respuesta inmobiliaria
+"Hemos recibido un mail a nuestra casilla <dir_mail> con el mensaje: mensaje"
+end note
+
+abstract class Inmueble{
+	domicilio
+	superficie
+	cantidadAmbintes
+	precioUSD
+	List<Interesado> interesados
+
+	cambioPrecio()
+	notificar(montoAnterior, montoNuevo)
+	notificar(Interesado, montoAnterior, montoNuevo)
+}
+
+note left of Inmueble::interesados
+No puedo agregar a una inmobiliaria al inmueble como interesado si la
+inmobiliaria posee ese inmueble entre los ofrecidos
+end note
+
+
+note left of Inmueble::cambioPrecio
+cuando cambio el precio
+recorrer la lista de interesados
+y por cada interesado ejecutar metodo notificar(interesado, montoAnterior, montoNuevo)
+end note
+
+note left of Inmueble::notificar
+notificar al interesado ejecuta el metodo
+crea el mensaje
+mensaje = "El inmueble <mostrar todos datos del inmueble> por el que ha
+demostrado interés cambió su precio de <monto_anterior> a
+<nuevo_monto>"
+interesado.notificarCambio(mensaje)
+end note
+class Departamento{
+	tieneSum
+	tienePileta
+	tieneGinasio
+	tieneCochera
+}
+class Casa{
+	tieneQuincho
+	tienePileta
+	superficeJardin
+}
+Interesado <|-down- Cliente
+Interesado <|-left- Inmobiliaria
+Inmueble -left- Interesado
+Inmobiliaria -- Inmueble
+Inmueble <|-- Casa
+Inmueble <|-- Departamento
+@enduml
