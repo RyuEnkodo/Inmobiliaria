@@ -5,6 +5,7 @@ import java.util.List;
 import inmobiliaria.clases.Casa;
 import inmobiliaria.clases.Casa;
 
+
 public abstract class Inmueble {
 
 // Cambio precio de  Inmueble ( cambioPrecio() ) cambia el precio, recorre la lista del Interesado, por cada interesado ejecutamos el notificar(Interesado) 
@@ -32,21 +33,18 @@ public abstract class Inmueble {
 	}
 
 
+	public abstract void notificar(Double montoAnterior, Double montoNuevo, List<Interesado> interesados);
+
 		public void CambioDePrecio(Double porcentajeAumento) {
 			
-			MontoAnterior(PrecioUSD());
+			montoAnterior = precioUSD;
 			
 			montoNuevo = ((precioUSD * porcentajeAumento)/100) + precioUSD; 
 			
-			notificar(montoAnterior, montoNuevo);
+			notificar(montoAnterior, montoNuevo, interesados);
 			
+		}
 		
-}
-	}
-	
-	
-	public abstract void notificar(Double montoAnterior, Double montoNuevo, List<Interesado> interesados);
-	
 	
 	public String getDomicilio() {
 		
@@ -124,17 +122,6 @@ public abstract class Inmueble {
 		this.interesados.add(interesado);
 	}
 
-	
-	public void CambioDePrecio(Double porcentajeAumento) {
-		
-		super.setMontoAnterior(super.getPrecioUSD());
-		
-		montoNuevo = ((precioUSD * porcentajeAumento)/100) + precioUSD; 
-		
-		notificar(montoAnterior, montoNuevo);
-		
-	
-}
 	
 	public Double getMontoAnterior() {
 		return montoAnterior;

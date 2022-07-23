@@ -25,26 +25,24 @@ public class Inmobiliaria extends Interesado {
 	}
 	
 	public void addInmuebleOfrecido(Inmueble inmuebleOfrecido) {
-		
-		
-		
-		
-		
-		for (Inmueble i : inmueblesOfrecidos) {
-		
-			if (i == inmuebleOfrecido) {
-				
-				this.inmueblesOfrecidos.add(inmuebleOfrecido);
-				
-			} else {
-				System.out.println("Esta inmobiliaria ya contiene a este inmueble.");
-			}
-			
-		}
-		
-		
-		
-	}
+        if(this.validaInmueble(inmuebleOfrecido)) {
+            System.out.println("Ya se encuentra registrado el inmueble");
+        }else{
+            this.inmueblesOfrecidos.add(inmuebleOfrecido);
+        }
+    }
+
+    public Boolean validaInmueble(Inmueble inmuebleOfrecido) {
+        for (Inmueble i : this.inmueblesOfrecidos) {
+            String domi = i.getDomicilio();
+            if (domi.equalsIgnoreCase(inmuebleOfrecido.getDomicilio())) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return false;
+    }
 
 	public Double getPorcentajeComision() {
 		return porcentajeComision;

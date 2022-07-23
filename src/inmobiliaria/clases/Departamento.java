@@ -1,6 +1,6 @@
 package inmobiliaria.clases;
 
-
+import java.util.List;
 
 public class Departamento extends Inmueble  {
 
@@ -64,6 +64,21 @@ public class Departamento extends Inmueble  {
 	public String toString() {
 		return "Departamento [tieneSum=" + tieneSum + ", tienePileta=" + tienePileta + ", tieneGimnasio="
 				+ tieneGimnasio + ", tieneCochera=" + tieneCochera + "]";
+	}
+
+
+	@Override
+	public void notificar(Double montoAnterior, Double montoNuevo, List<Interesado> interesados) {
+		
+		String mensaje = "El inmueble sito en " + this.getDomicilio() + ", que cuenta con una superficie de: " + this.getSuperficie() + " m2, cantidad de ambientes: " + this.getCantidadAmbientes() + this.getTieneCochera() + ", por el que ha demostrado interés cambió su precio de " + montoAnterior + " a " + montoNuevo + "\n";  
+		
+		
+		for (Interesado i : interesados) {
+		
+		
+			i.responder(mensaje);
+		
+		}		
 	}
 	
 	

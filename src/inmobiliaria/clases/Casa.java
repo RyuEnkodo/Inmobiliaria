@@ -56,7 +56,7 @@ public class Casa extends Inmueble {
 	@Override
 	public void notificar(Double montoAnterior, Double montoNuevo, List<Interesado> interesados) {
 		
-		String mensaje = "El inmueble sito en " + this.getDomicilio() + ", que cuenta con una superficie de: " + this.getSuperficie() + " m2, cantidad de ambientes: " + this.getCantidadAmbientes() + ", por el que ha demostrado interés cambió su precio de " + montoAnterior + " a " + montoNuevo + "\n";  
+		String mensaje = "El inmueble sito en " + this.getDomicilio() + ", que cuenta con una superficie de: " + this.getSuperficie() + " m2, cantidad de ambientes: " + this.getCantidadAmbientes() + this.getTienePileta() +", por el que ha demostrado interés cambió su precio de " + montoAnterior + " a " + montoNuevo + "\n";  
 		
 		
 		for (Interesado i : interesados) {

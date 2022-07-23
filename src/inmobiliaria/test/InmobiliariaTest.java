@@ -1,7 +1,7 @@
 package inmobiliaria.test;
 
-import java.util.ArrayList;
-import java.util.List;
+
+
 import java.util.Scanner;
 
 import inmobiliaria.clases.Casa;
@@ -36,11 +36,11 @@ public class InmobiliariaTest {
 		Casa casa4 = new Casa("Av. Rivadavia 4598", 100.0, 3, 90000.0, "Casa", true, false,false);
 		Casa casa5 = new Casa("Gascón 56", 100.0, 3, 450000.0, "Casa", false, true,true);
 		
-		Departamento depa1 = new Departamento("La Pampa 354", 40.0, 1, 170000.0, "Departamento", false, false, false, true);
-		Departamento depa2 = new Departamento("Luis María Campos 700", 40.0, 1, 230000.0, "Departamento", true, false, true, false);
-		Departamento depa3 = new Departamento("Armenia 889", 40.0, 1, 47000.0, "Departamento", false, true, false, true);
-		Departamento depa4 = new Departamento("Gaona 908", 40.0, 1, 69000.0, "Departamento", false, false, true, true);
-		Departamento depa5 = new Departamento("Las Heras 7869", 40.0, 1, 176000.0, "Departamento", true, true, true, true);
+		Departamento depa1 = new Departamento("La Pampa 354, 5° 'A' " , 40.0, 1, 170000.0, "Departamento", false, false, false, true);
+		Departamento depa2 = new Departamento("Luis María Campos 700, 3° 'B'", 40.0, 1, 230000.0, "Departamento", true, false, true, false);
+		Departamento depa3 = new Departamento("Armenia 889, 11° 'C'", 40.0, 1, 47000.0, "Departamento", false, true, false, true);
+		Departamento depa4 = new Departamento("Gaona 908, 1 'C'", 40.0, 1, 69000.0, "Departamento", false, false, true, true);
+		Departamento depa5 = new Departamento("Las Heras 7869, 6°", 40.0, 1, 176000.0, "Departamento", true, true, true, true);
 		
 		
 		
@@ -51,7 +51,9 @@ public class InmobiliariaTest {
 		inmo1.addInmuebleOfrecido(casa2);
 		inmo1.addInmuebleOfrecido(casa4);
 		inmo1.addInmuebleOfrecido(depa1);
-
+		inmo1.addInmuebleOfrecido(depa1);
+		
+		
 		
 		inmo2.addInmuebleOfrecido(casa3);
 		inmo2.addInmuebleOfrecido(depa3);
@@ -124,7 +126,7 @@ public class InmobiliariaTest {
 		
 
 		
-
+		
 		// Interfaz de navegación por consola
 		
 		boolean out = false;
