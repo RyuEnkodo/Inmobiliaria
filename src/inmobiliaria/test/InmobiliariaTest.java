@@ -857,6 +857,7 @@ public class InmobiliariaTest {
 			System.out.println("\n##########################################\nNúmero erróneo, pruebe de nuevo por favor\n##########################################\n");
 		}
 			
+		sc.close();
 	}
 		
 	}
