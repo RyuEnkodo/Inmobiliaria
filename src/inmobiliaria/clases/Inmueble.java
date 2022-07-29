@@ -35,7 +35,7 @@ public abstract class Inmueble {
 
 	public abstract void notificar(Double montoAnterior, Double montoNuevo, List<Interesado> interesados);
 
-		public void CambioDePrecio(Double porcentajeAumento) {
+	public void CambioDePrecio(Double porcentajeAumento) {
 			
 			montoAnterior = precioUSD;
 			
@@ -43,7 +43,7 @@ public abstract class Inmueble {
 			
 			notificar(montoAnterior, montoNuevo, interesados);
 			
-		}
+	}
 		
 	
 	public String getDomicilio() {

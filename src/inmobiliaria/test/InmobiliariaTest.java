@@ -125,10 +125,11 @@ public class InmobiliariaTest {
 		casa5.addInteresados(cliente5);
 		
 
-		
+	
+	
 		
 		// Interfaz de navegación por consola
-		
+				
 		boolean out = false;
 		
 		Scanner sc = new Scanner(System.in);

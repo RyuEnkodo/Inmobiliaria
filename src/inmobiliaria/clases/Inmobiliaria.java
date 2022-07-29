@@ -11,33 +11,52 @@ public class Inmobiliaria extends Interesado {
 	
 	
 	public Inmobiliaria(String nombre, String email, Double porcentajeComision) {
+		
 		super(nombre, email);
+		
 		this.porcentajeComision = porcentajeComision;
+		
 		inmueblesOfrecidos = new ArrayList<>();
+		
 	}
 	
 	public List<Inmueble> getInmueblesOfrecidos() {
+		
 		return inmueblesOfrecidos;
+		
 	}
 	
 	public void setInmueblesOfrecidos(List<Inmueble> inmueblesOfrecidos) {
+		
 		this.inmueblesOfrecidos = inmueblesOfrecidos;
+		
 	}
 	
 	public void addInmuebleOfrecido(Inmueble inmuebleOfrecido) {
+		
         if(this.validaInmueble(inmuebleOfrecido)) {
+        	
             System.out.println("Ya se encuentra registrado el inmueble");
+            
         }else{
+        	
             this.inmueblesOfrecidos.add(inmuebleOfrecido);
+            
         }
     }
 
     public Boolean validaInmueble(Inmueble inmuebleOfrecido) {
+    	
         for (Inmueble i : this.inmueblesOfrecidos) {
+        	
             String domi = i.getDomicilio();
+            
             if (domi.equalsIgnoreCase(inmuebleOfrecido.getDomicilio())) {
+            	
                 return true;
+                
             } else {
+            	
                 return false;
             }
         }
@@ -45,8 +64,11 @@ public class Inmobiliaria extends Interesado {
     }
 
 	public Double getPorcentajeComision() {
+		
 		return porcentajeComision;
+	
 	}
+	
 	
 	public void setPorcentajeComision(Double porcentajeComision) {
 		this.porcentajeComision = porcentajeComision;

@@ -64,6 +64,7 @@ public class Casa extends Inmueble {
 		
 			i.responder(mensaje);
 		
+			
 		}
 		
 	}
