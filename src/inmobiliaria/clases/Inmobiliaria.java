@@ -31,12 +31,16 @@ public class Inmobiliaria extends Interesado {
 		this.inmueblesOfrecidos = inmueblesOfrecidos;
 		
 	}
+
+	
 	
 	public void addInmuebleOfrecido(Inmueble inmuebleOfrecido) {
 		
         if(this.validaInmueble(inmuebleOfrecido)) {
         	
-            System.out.println("Ya se encuentra registrado el inmueble");
+            System.out.println("--------------------------------------------------\n"
+            		+ "Ya se encuentra registrado el inmueble\n"
+            		+ "--------------------------------------------------\n");
             
         }else{
         	
