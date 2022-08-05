@@ -56,45 +56,6 @@ public class Inmobiliaria extends Interesado {
 	
 	
 	
-	
-//	public void addInmuebleOfrecido(Inmueble inmuebleOfrecido) {
-//		
-//        if(this.valInmueble(inmuebleOfrecido)) {
-//        	
-//            System.out.println("--------------------------------------------------\n"
-//            		+ "Ya se encuentra registrado el inmueble\n" + inmuebleOfrecido.getDomicilio()
-//            		+ "--------------------------------------------------\n");
-//            
-//        }else{
-//        	
-//            this.inmueblesOfrecidos.add(inmuebleOfrecido);
-//            
-//            System.out.println(inmuebleOfrecido.getDomicilio() + "-");
-//            
-//        }
-//    }
-//
-//    public Boolean valInmueble(Inmueble inmuebleOfrecido) {
-//    	
-//        for (Inmueble i : inmueblesOfrecidos) {
-//        	
-//            String dom = i.getDomicilio();
-//            
-//            System.out.println(dom + "dom");
-//            System.out.println(inmuebleOfrecido.getDomicilio() + "inmuebleOfrecido");
-//            
-//            if (dom.equalsIgnoreCase(inmuebleOfrecido.getDomicilio())) {
-//            	
-//                return true;
-//                
-//            } else {
-//            	
-//                return false;
-//            }
-//        }
-//        return false;
-//    }
-
 	public Double getPorcentajeComision() {
 		
 		return porcentajeComision;

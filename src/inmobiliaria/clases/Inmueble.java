@@ -178,29 +178,6 @@ public abstract class Inmueble {
 				
 			}	
 			
-			
-			
-			
-			
-//			for(int i = 0; i < inmoAValidar.getInmueblesOfrecidos().size(); i++) {
-//				
-//				String dom = inmoAValidar.getInmueblesOfrecidos().get(i).getDomicilio();
-//				
-//				if (dom.equalsIgnoreCase(nombreInmo)) {
-//					
-//					System.out.println("Esta inmobiliaria ya esta en la lista.");
-//					
-//					return true;
-//					
-//				} else {
-//					
-//					System.out.println(" Esta no esta :p");
-//
-//					return false;
-//				}
-//				
-//			
-//			}
 		
 		}
 			System.out.println("No es inmobiliaria");
