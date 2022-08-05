@@ -51,6 +51,7 @@ public class InmobiliariaTest {
 		inmo1.addInmuebleOfrecido(casa2);
 		inmo1.addInmuebleOfrecido(casa4);
 		inmo1.addInmuebleOfrecido(depa1);
+		inmo1.addInmuebleOfrecido(depa3);
 		inmo1.addInmuebleOfrecido(depa1);
 		
 		
@@ -79,6 +80,8 @@ public class InmobiliariaTest {
 		depa1.addInteresados(inmo1);
 		depa1.addInteresados(cliente5);
 		depa1.addInteresados(cliente2);
+		depa1.addInteresados(inmo1);
+		depa1.addInteresados(cliente5);
 		
 		depa2.addInteresados(inmo4);
 		depa2.addInteresados(cliente1);

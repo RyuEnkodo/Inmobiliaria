@@ -32,40 +32,68 @@ public class Inmobiliaria extends Interesado {
 		
 	}
 
-	
+	// Método add con validación
 	
 	public void addInmuebleOfrecido(Inmueble inmuebleOfrecido) {
+				
+		System.out.println("El inmueble sito en: " + inmuebleOfrecido.getDomicilio());
 		
-        if(this.validaInmueble(inmuebleOfrecido)) {
-        	
-            System.out.println("--------------------------------------------------\n"
-            		+ "Ya se encuentra registrado el inmueble\n"
-            		+ "--------------------------------------------------\n");
-            
-        }else{
-        	
-            this.inmueblesOfrecidos.add(inmuebleOfrecido);
-            
-        }
-    }
-
-    public Boolean validaInmueble(Inmueble inmuebleOfrecido) {
-    	
-        for (Inmueble i : this.inmueblesOfrecidos) {
-        	
-            String domi = i.getDomicilio();
-            
-            if (domi.equalsIgnoreCase(inmuebleOfrecido.getDomicilio())) {
-            	
-                return true;
-                
-            } else {
-            	
-                return false;
-            }
-        }
-        return false;
-    }
+		boolean existe = inmueblesOfrecidos.contains(inmuebleOfrecido);
+		
+		if (existe) {
+			System.out.println("El elemento SÍ existe en la lista\n"
+					+ "----------------------");
+		} else {
+			System.out.println("El elemento no existe\n"
+					+ "----------------------");
+			
+			this.inmueblesOfrecidos.add(inmuebleOfrecido);
+		}	
+		
+	}
+	
+	
+	
+	
+	
+	
+//	public void addInmuebleOfrecido(Inmueble inmuebleOfrecido) {
+//		
+//        if(this.valInmueble(inmuebleOfrecido)) {
+//        	
+//            System.out.println("--------------------------------------------------\n"
+//            		+ "Ya se encuentra registrado el inmueble\n" + inmuebleOfrecido.getDomicilio()
+//            		+ "--------------------------------------------------\n");
+//            
+//        }else{
+//        	
+//            this.inmueblesOfrecidos.add(inmuebleOfrecido);
+//            
+//            System.out.println(inmuebleOfrecido.getDomicilio() + "-");
+//            
+//        }
+//    }
+//
+//    public Boolean valInmueble(Inmueble inmuebleOfrecido) {
+//    	
+//        for (Inmueble i : inmueblesOfrecidos) {
+//        	
+//            String dom = i.getDomicilio();
+//            
+//            System.out.println(dom + "dom");
+//            System.out.println(inmuebleOfrecido.getDomicilio() + "inmuebleOfrecido");
+//            
+//            if (dom.equalsIgnoreCase(inmuebleOfrecido.getDomicilio())) {
+//            	
+//                return true;
+//                
+//            } else {
+//            	
+//                return false;
+//            }
+//        }
+//        return false;
+//    }
 
 	public Double getPorcentajeComision() {
 		

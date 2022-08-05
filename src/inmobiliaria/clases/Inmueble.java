@@ -2,14 +2,12 @@ package inmobiliaria.clases;
 
 import java.util.ArrayList;
 import java.util.List;
-import inmobiliaria.clases.Casa;
-import inmobiliaria.clases.Casa;
+
+
 
 
 public abstract class Inmueble {
 
-// Cambio precio de  Inmueble ( cambioPrecio() ) cambia el precio, recorre la lista del Interesado, por cada interesado ejecutamos el notificar(Interesado) 
-	// Ejecuta el metodo notficarCambio() emite el msj con el mensaje que escribe el Inmueble.
 	
 	private String tipo;
 	private String domicilio;
@@ -117,11 +115,112 @@ public abstract class Inmueble {
 		this.interesados = interesados;
 	}
 	
+	// Método add con validación
+	
 	public void addInteresados(Interesado interesado) {
 		
-		this.interesados.add(interesado);
+		if (valSiEsta(interesado)) {
+			
+			System.out.println(interesado.getNombre() + " ya está en la lista");
+			
+			
+		} else if (valInmo(interesado)) {
+			System.out.println("Ya contiene este inmueble");
+		} else {
+			System.out.println(interesado.getNombre() + " agregado");
+
+			this.interesados.add(interesado);
+		}
+	}
+		
+	
+	private boolean valSiEsta(Interesado interesado) {
+		
+		
+		for(Interesado in : this.interesados) {
+			
+			if (in.getEmail().equalsIgnoreCase(interesado.getEmail())) {
+								
+				return true;
+				
+			} else {
+				
+				return false;
+				
+			}
+		}
+		
+		return false;
 	}
 
+	private boolean valInmo(Interesado interesado) {
+
+		if (interesado instanceof Inmobiliaria) {
+			
+			System.out.println(interesado.getNombre() + " es inmobiliaria");
+			
+			String nombreInmo = ((Inmobiliaria)interesado).getNombre();
+				
+			Inmobiliaria inmoAValidar = (Inmobiliaria)interesado;
+			
+			
+			boolean existe = inmoAValidar.getInmueblesOfrecidos().contains(interesado);
+			
+			
+			
+			if (existe) {
+				System.out.println("El elemento SÍ existe en la lista\n"
+						+ "----------------------");
+			} else {
+				System.out.println("El elemento no existe\n"
+						+ "----------------------");
+				
+				
+			}	
+			
+			
+			
+			
+			
+//			for(int i = 0; i < inmoAValidar.getInmueblesOfrecidos().size(); i++) {
+//				
+//				String dom = inmoAValidar.getInmueblesOfrecidos().get(i).getDomicilio();
+//				
+//				if (dom.equalsIgnoreCase(nombreInmo)) {
+//					
+//					System.out.println("Esta inmobiliaria ya esta en la lista.");
+//					
+//					return true;
+//					
+//				} else {
+//					
+//					System.out.println(" Esta no esta :p");
+//
+//					return false;
+//				}
+//				
+//			
+//			}
+		
+		}
+			System.out.println("No es inmobiliaria");
+		
+		
+		return false;
+	}
+
+
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	public Double getMontoAnterior() {
 		return montoAnterior;
